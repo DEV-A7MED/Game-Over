@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Offline, Online } from "react-detect-offline";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import All from "./Components/All/All";
 import Categories from "./Components/Category/Category";
 import Home from "./Components/Home/Home";
@@ -19,7 +19,7 @@ function App() {
 let {userData,setUserData,saveUserData}=useContext(GameContext)
 
 
-  let routers = createBrowserRouter([
+  let routers = createHashRouter([
     {
       path: "/",
       element: <Layout userData={userData} setUserData={setUserData} />,
