@@ -1,20 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Mediaitems from '../Mediaitems/Mediaitems';
 import Loading from '../Loading/Loading';
 
 export default function Categories() {
 let {game_type}=useParams();
-const [gameCategory, setGameCategory] = useState([])
+const [gameCategory, setGameCategory] = useState([]);
 const [elementToShow, setElementToShow] = useState(20);
 const slice= gameCategory.slice(0,elementToShow);
 const loadMore=()=>{
   setElementToShow(elementToShow+elementToShow);
-}
-
+};
 const options = {
     method: 'GET',
     url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
@@ -27,12 +26,12 @@ const options = {
   async function getGameCategory(){
     let {data}=await axios.request(options);
     // console.log(data);
-  setGameCategory(data)
+  setGameCategory(data);
   }
   
   useEffect(() => {
     getGameCategory();
-  }, [game_type])
+  }, [game_type]);
   
 
   return (

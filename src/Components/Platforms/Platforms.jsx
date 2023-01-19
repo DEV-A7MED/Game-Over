@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Mediaitems from '../Mediaitems/Mediaitems';
 import Loading from '../Loading/Loading';
 
 export default function Platforms() {
 let {game_type}=useParams();
-const [platformsGames, setPlatformsGames] = useState([])
+const [platformsGames, setPlatformsGames] = useState([]);
 
 const [elementToShow, setElementToShow] = useState(20);
 const slice= platformsGames.slice(0,elementToShow);
@@ -29,13 +29,13 @@ const options = {
   async function getPlatformsGames(){
     let {data}=await axios.request(options);
     // console.log(data); 
-  setPlatformsGames(data)
+  setPlatformsGames(data);
   }
   
   useEffect(() => {
     getPlatformsGames();
 
-  }, [game_type])
+  }, [game_type]);
   
 
 

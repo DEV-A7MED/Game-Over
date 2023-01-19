@@ -16,7 +16,7 @@ import { GameContext } from "./Context/GameStore";
 
 function App() {
 
-let {userData,setUserData,saveUserData}=useContext(GameContext)
+let {userData,setUserData,saveUserData}=useContext(GameContext);
 
 
   let routers = createHashRouter([
@@ -41,8 +41,8 @@ let {userData,setUserData,saveUserData}=useContext(GameContext)
     <>
     <div> 
       <Online><RouterProvider router={routers} /></Online>
-        <Offline><div className="detect-offline">You Are Offline</div></Offline>
-      <Offline></Offline>
+      <Offline><div className="detect-offline">You Are Offline</div></Offline>
+      
     </div>
       
     </>

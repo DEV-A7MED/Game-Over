@@ -8,17 +8,16 @@ export default function GameContextProvider(props){
 
     function saveUserData(){
       let encoded=localStorage.getItem('userToken');
-    let decoded=jwtDecode(encoded)
-   
-    setUserData(decoded)
+    let decoded=jwtDecode(encoded);
+    setUserData(decoded);
     }
       //to avoid refresh logout
       useEffect(() => {
         if(localStorage.getItem('userToken')!==null){
           saveUserData();
         }
-      }, [])
-    return <GameContext.Provider value={{userData,setUserData,saveUserData}}>
+      }, []);
+      return <GameContext.Provider value={{userData,setUserData,saveUserData}}>
         {props.children}
     </GameContext.Provider>
 }

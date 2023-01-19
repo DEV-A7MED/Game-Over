@@ -1,19 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 import Mediaitems from '../Mediaitems/Mediaitems';
 import Loading from '../Loading/Loading';
 export default function All() {
 
 
-const [games, setGames] = useState([])
+const [games, setGames] = useState([]);
 const [elementToShow, setElementToShow] = useState(20);
 // more games button
 const slice= games.slice(0,elementToShow);
 const loadMore=()=>{
   setElementToShow(elementToShow+elementToShow);
-}
+};
 const options = {
   method: 'GET',
   url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
@@ -26,12 +26,12 @@ const options = {
 async function getGames(){
   let {data}=await axios.request(options);
   // console.log(data);
-setGames(data)
+setGames(data);
 }
 
 useEffect(() => {
   getGames()
-}, [])
+}, []);
 
   return (
     <>

@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 export default function Home() {
  
-const [homeGames, setHomeGames] = useState([])
+const [homeGames, setHomeGames] = useState([]);
 
 
 const options = {
@@ -20,12 +20,12 @@ const options = {
   async function getHomeGames(){
     let {data}=await axios.request(options);
     // console.log(data);
-  setHomeGames(data)
+  setHomeGames(data);
   }
   
   useEffect(() => {
     getHomeGames();
-  }, [])
+  }, []);
   return (
     <>
     <header className=' caption d-flex align-items-center justify-content-center'>

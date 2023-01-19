@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Mediaitems from '../Mediaitems/Mediaitems';
 import Loading from '../Loading/Loading';
 
 export default function Sortby() {
 let {game_type}=useParams();
-const [sortedGames, setSortedGames] = useState([])
+const [sortedGames, setSortedGames] = useState([]);
 const [elementToShow, setElementToShow] = useState(20);
 const slice= sortedGames.slice(0,elementToShow);
 const loadMore=()=>{
@@ -32,7 +32,7 @@ const options = {
   
   useEffect(() => {
     getSortedGames();
-  }, [game_type])
+  }, [game_type]);
   
 
 
