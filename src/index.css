@@ -31,7 +31,7 @@ nav{
     color:#2F7BEB;
 }
 .navbar-toggler:focus {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 .form-content{
     background-color: #32383E;
