@@ -26,8 +26,12 @@ nav{
                 margin-left:50PX;
     }
 }
+
 .brdr-link:hover{
     color:#2F7BEB;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 .form-content{
     background-color: #32383E;
