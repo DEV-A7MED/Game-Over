@@ -1,0 +1,46 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+import Mediaitems from '../Mediaitems/Mediaitems';
+import Loading from '../Loading/Loading';
+export default function All() {
+
+
+const [games, setGames] = useState([])
+const [elementToShow, setElementToShow] = useState(20);
+// more games button
+const slice= games.slice(0,elementToShow);
+const loadMore=()=>{
+  setElementToShow(elementToShow+elementToShow);
+}
+const options = {
+  method: 'GET',
+  url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
+  headers: {
+    'X-RapidAPI-Key': 'b52128808dmsh5826403ec30ac21p1b9548jsnfca5769e0b68',
+    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+  }
+};
+
+async function getGames(){
+  let {data}=await axios.request(options);
+  // console.log(data);
+setGames(data)
+}
+
+useEffect(() => {
+  getGames()
+}, [])
+
+  return (
+    <>
+  <div className="row  gy-4">
+    {games.length > 0 ? slice.map((game,index)=><Mediaitems key={index} game={game}/>):<Loading/>}
+  </div>
+  <div className="butoon-cont text-center my-5">
+  <button onClick={()=>loadMore()}  className='btn btn-btn-outline-secondary botton ' >More Games</button>
+  </div>
+    
+    </>
+  )
+}
