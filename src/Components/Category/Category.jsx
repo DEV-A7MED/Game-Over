@@ -38,7 +38,7 @@ const options = {
     <>
     
     <div className="row  gy-4">
-    {gameCategory.length>0?slice.map((game,index)=><Mediaitems key={index} game={game}/>):<Loading/>}
+    {gameCategory.length!==0?slice.map((game,index)=><Mediaitems key={index} game={game}/>):<Loading/>}
 
   </div>
    

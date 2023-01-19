@@ -101,7 +101,7 @@ export default function Navbar({userData,logout}) {
                     Shooter
                   </Link>
                   <Link className="dropdown-item" to='/categories/open-world'>
-                    Open-world
+                    Open World
                   </Link>
                   <Link className="dropdown-item" to='/categories/zombie'>
                     Zombie
@@ -110,7 +110,7 @@ export default function Navbar({userData,logout}) {
                     Fantasy
                   </Link>
                   <Link className="dropdown-item" to='/categories/action-rpg'>
-                    Action-rpg
+                    Action Rpg
                   </Link>
                   <Link className="dropdown-item" to='/categories/action'>
                     Action
@@ -118,9 +118,7 @@ export default function Navbar({userData,logout}) {
                   <Link className="dropdown-item" to='/categories/flight'>
                     Flight
                   </Link>
-                  <Link className="dropdown-item" to='/categories/battle royale'>
-                    Battle-royale
-                  </Link>
+                  <Link className="dropdown-item" to='/categories/battle-royale'>Battle Royale</Link>
                   
                 </div>
               </li>
