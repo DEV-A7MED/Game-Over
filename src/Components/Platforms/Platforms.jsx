@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
@@ -33,6 +34,7 @@ const options = {
   
   useEffect(() => {
     getPlatformsGames();
+
   }, [game_type])
   
 
