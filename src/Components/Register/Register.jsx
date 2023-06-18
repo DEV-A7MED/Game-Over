@@ -25,17 +25,17 @@ export default function Register() {
 
   }
   async function SendRegisterdData() {
-    let { data } = await axios.post(`https://sticky-note-fe.vercel.app/signup`, user);
-    // console.log(data);
+    try {
+      let { data } = await axios.post(`https://form-git-master-dev-a7med.vercel.app/api/auth/signUp`, user);
+
     if (data.message === 'success') {
       setIsLoading(false);
       //login
       navigate('/login');
     }
-    else {
-      setError(data.message);
+    } catch (error) {
+      setError(error.response.data.Error);
       setIsLoading(false);
-
     }
   }
   function submitData(e) {
