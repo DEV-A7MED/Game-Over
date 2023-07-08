@@ -40,8 +40,8 @@ let {userData,setUserData,saveUserData}=useContext(GameContext);
   return (
     <>
     <div> 
-      <Online><RouterProvider router={routers} /></Online>
-      <Offline><div className="detect-offline">You Are Offline</div></Offline>
+      <RouterProvider router={routers} />
+      
       
     </div>
       
